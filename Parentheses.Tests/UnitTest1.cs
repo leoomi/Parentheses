@@ -11,6 +11,8 @@ public class ParenthesesCheckerTests
     [InlineData("{")]
     [InlineData("}")]
     [InlineData("[}")]
+    [InlineData("[{]}()")]
+    [InlineData("((())")]
     [InlineData("([{})")]
     [InlineData("({})[")]
     [InlineData("[[[[[[[[[[[[[[[")]
@@ -29,6 +31,7 @@ public class ParenthesesCheckerTests
     [InlineData("([{}])")]
     [InlineData("(){}[]")]
     [InlineData("{[((){}[])]}")]
+    [InlineData("{[((){}()[{}])()][]{}}")]
     [InlineData("((){{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}[])")]
     public void ParenthesesChecker_IsValid_ReturnTrue(string? s)
     {
